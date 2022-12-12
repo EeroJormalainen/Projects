@@ -1,0 +1,23 @@
+Snake gui -ohjelma kuvaa perinteistä matopeliä, jossa liikutetaan aluksi yhtä pistettä näytöllä, joka kasvaa 
+(ja nopeutuu) jokaisella syömällään ruoalla. Pelissä asetetaan itselle tavoitepituus, ja kun mato saavuttaa tämän, 
+peli loppuu ja pelaajaa onnitellaan voitosta. Peli hävitään, jos mato osuu seinään tai itseensä. Tällöin ilmoitetaan madon kuolemasta ja tarjotaan uutta peliä.
+Ohjelmaan rakentuu alustamalla aluksi pelikenttä, pelialueen koon säätönapit, randomgeneraattorin siemenluvun 
+(Määrittää ruoan ikonin ja paikkojen järjestyksen), pelimuodon valintaboxin ja tavoitteen säätökiertonappi. 
+Lisäksi näytölle tulostuu ohjeet liikkumiseen. Kun pelaaja on valmis aloittamaan, 
+tämä painaa ready -nappia. Tämän jälkeen säätönapit deaktivoidaan ja mato alkaa liikkumaan näytöllä.
+
+ Ruoka on esitetty hedelmä-ikoneina, ja ikoni vaihtuu siirtyessään. Madon rungon väri muuttuu rgb-luvun kasvaessa aina ruoan löytäessä 
+(raja = 255). Mato liikkuu automaattisesti viimeiseksi valittuun suuntaan, ja kasvaa aina löytäessään ruoan. Madon pää ja häntä on 
+erimuotoinen muuhun osaan verrattuna.  Jos hardmode on valittu, mato nopeutuu aina kun se kasvaa pituutta, kunnes se saavuttaa 
+maksiminopeuden. Madon pituus on ilmoitettu pelaajalle laudan viereen. Jos mato kuolee/peli voitetaan, kaikki säätönapit vapautetaan jälleen käyttöön jotta peli voidaan säätää uudelleen eri siemenluvulla tai koolla. Madon kuollessa ennenaikaisesti, näytön väri muuttuu punaiseksi, jos tavoite saavutetaa, väri muuttuu vihreäksi. Pelin alkaessa uudelleen, väri palautuu.
+
+Graafinen käyttöliittymä mainwindow vain esittää näytöllä sen, mitä luokassa gameboard tapahtuu. Gameboard -luokkaan lisätty metodeja vain gui:n käyttöön, pääasiassa piirtämistä varten. 
+Rajapinnassa käyttöliittymän suuntaan kulkee tieto käärmeen ja ruoan Point -olioiden koordinaateista, kun taas gameboard -luokkaan kulkee tieto siitä milloin ja mihin suuntaan pisteitä liikutetaan.  
+Käärmeen siirtosuunta valitaan WASD-näppäimillä, ja tieto välittyy Point-luokkaan. 
+
+Oleellisimmat suunnittelupäätökset olivat movement-rakenteen toteuttaminen käyttämällä clear komentoa jokaisella siirtymällä. 
+On tiedossa että tämä ei ole tehokkain tapa toteuttaa liikettä, mutta taitojen puutteessa siihen oli päädyttävä. 
+Lisäksi madon liikuttaminen 5 koordinaattia kerrallaan oli oleellinen ratkaisu, sillä kaikki muu pelilaudan geometriassa piti toteuttaa tasalukujen mukaan, 
+muuten mato ei koskaan pääsisi oikeaan koordinaattiin ruoan suhteen saatikka madon osuminen seinään olisi vaikea toteuttaa symmetrisesti. Värimaailma on valittu
+pelille ominaisten värien mukaan (ruoho, multa, luonto).
+
