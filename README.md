@@ -1,6 +1,6 @@
-Snake_GUI - project from Bachelors studies programming course.  
+Snake_GUI - project from Bachelors studies programming course. Implemented in C++
 
-Kandidaatintyö - : Jätevedenpuhdistamon virtaamamittausten analyysi ja vertailu
+Bachelors thesis - Analysis and comparison of flowmeters at a wastewater treatment plant.
 
 DL Approach for Multiclass CAD diagnosis - group project from exchange studies in University of Aveiro  Advanced ML course.
 
